@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de pacientes</title>
+</head>
+<body>
+    <h1>Listado de pacientess</h1>
+    <a href="{% url 'add_paciente' %}"><button>Agregar paciente</button></a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha_Nacimiento</th>
+                <th>Sexo</th>
+                <th>Altura</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paciente in lispac %}
+            <tr>
+                <td>{{paciente.nombre}}</td>
+                <td>{{paciente.apellido}}</td>
+                <td>{{paciente.fecha_nacimiento}}</td>
+                <td>{{paciente.sexo}}</td>
+                <td>{{paciente.altura}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+</body>
+</html>
